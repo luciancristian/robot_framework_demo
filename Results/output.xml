@@ -1,0 +1,2646 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20181225 16:49:28.776" generator="Robot 3.0.4 (Python 2.7.15 on win32)">
+<suite id="s1" name="01-Suite SDET Task1 &amp; 02-Suite SDET Task1">
+<suite source="C:\work\TrivFunctionalTesting\TestSuites\01-Suite_SDET_Task1.robot" id="s1-s1" name="01-Suite SDET Task1">
+<kw type="setup" name="beforeSuite" library="CommonFunctions">
+<kw name="Append To Environment Variable" library="OperatingSystem">
+<doc>Appends given ``values`` to environment variable ``name``.</doc>
+<arguments>
+<arg>PATH</arg>
+<arg>C:\\work\\TrivFunctionalTesting\\Resource/../ExternalComponents/</arg>
+</arguments>
+<msg timestamp="20181225 16:49:29.450" level="INFO">Environment variable 'PATH' set to value 'C:\oraclexe\app\oracle\product\11.2.0\server\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\idmu\common;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\TortoiseSVN\bin;C:\Program Files (x86)\Sennheiser\HeadSetup\;C:\Python27;C:\Program Files\Java\jdk1.8.0_172\bin;C:\Program Files\Java\jre1.8.0_172\bin;C:\Python27\Scripts;C:\##orange_work\apache-maven-3.5.4\bin;C:\Program Files\Git\cmd;C:\Program Files (x86)\PuTTY\;C:\Program Files\TortoiseGit\bin;C:\Program Files\nodejs\;C:\Program Files (x86)\Google\Chrome\Application;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\idmu\common;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\TortoiseSVN\bin;C:\Program Files (x86)\Sennheiser\HeadSetup\;C:\Python27;C:\Program Files\Java\jdk1.8.0_172\bin;C:\Program Files\Java\jre1.8.0_172\bin;C:\Python27\Scripts;C:\Users\lucian.cristian\AppData\Local\Programs\Git\cmd;C:\Users\lucian.cristian\AppData\Roaming\npm;C:\work\TrivFunctionalTesting\Resource/../ExternalComponents/'.</msg>
+<status status="PASS" endtime="20181225 16:49:29.451" starttime="20181225 16:49:29.450"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${BROWSER}'=='chrome' or '${BROWSER}'=='googlechrome'</arg>
+<arg>Evaluate</arg>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys</arg>
+</arguments>
+<assign>
+<var>${chrome_options}</var>
+</assign>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys</arg>
+</arguments>
+<status status="PASS" endtime="20181225 16:49:29.453" starttime="20181225 16:49:29.453"></status>
+</kw>
+<msg timestamp="20181225 16:49:29.453" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x0000000003B32748&gt;</msg>
+<status status="PASS" endtime="20181225 16:49:29.454" starttime="20181225 16:49:29.451"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${BROWSER}'=='chrome' or '${BROWSER}'=='googlechrome'</arg>
+<arg>Run Keywords</arg>
+<arg>Call Method</arg>
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-cache</arg>
+<arg>AND</arg>
+<arg>Create Webdriver</arg>
+<arg>Chrome</arg>
+<arg>chrome_options=${chrome_options}</arg>
+</arguments>
+<kw name="Run Keywords" library="BuiltIn">
+<doc>Executes all the given keywords in a sequence.</doc>
+<arguments>
+<arg>Call Method</arg>
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-cache</arg>
+<arg>AND</arg>
+<arg>Create Webdriver</arg>
+<arg>Chrome</arg>
+<arg>chrome_options=${chrome_options}</arg>
+</arguments>
+<kw name="Call Method" library="BuiltIn">
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<arguments>
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-cache</arg>
+</arguments>
+<status status="PASS" endtime="20181225 16:49:29.456" starttime="20181225 16:49:29.456"></status>
+</kw>
+<kw name="Create Webdriver" library="Selenium2Library">
+<doc>Creates an instance of a WebDriver.</doc>
+<arguments>
+<arg>Chrome</arg>
+<arg>chrome_options=${chrome_options}</arg>
+</arguments>
+<msg timestamp="20181225 16:49:29.457" level="INFO">Creating an instance of the Chrome WebDriver</msg>
+<status status="PASS" endtime="20181225 16:49:32.409" starttime="20181225 16:49:29.456"></status>
+</kw>
+<status status="PASS" endtime="20181225 16:49:32.409" starttime="20181225 16:49:29.455"></status>
+</kw>
+<status status="PASS" endtime="20181225 16:49:32.409" starttime="20181225 16:49:29.454"></status>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20181225 16:49:33.645" starttime="20181225 16:49:32.409"></status>
+</kw>
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${URL}</arg>
+</arguments>
+<msg timestamp="20181225 16:49:33.646" level="INFO">Opening url 'http://magazine.trivago.com/'</msg>
+<status status="PASS" endtime="20181225 16:49:37.745" starttime="20181225 16:49:33.645"></status>
+</kw>
+<status status="PASS" endtime="20181225 16:49:37.745" starttime="20181225 16:49:29.449"></status>
+</kw>
+<test id="s1-s1-t1" name="01_Search_a_destination">
+<kw type="setup" name="beforeTest" library="CommonFunctions">
+<kw type="for" name="${i} IN RANGE [ 5 ]">
+<kw type="foritem" name="${i} = 0">
+<kw name="Reload Page" library="Selenium2Library">
+<doc>Simulates user reloading page.</doc>
+<status status="PASS" endtime="20181225 16:49:39.335" starttime="20181225 16:49:37.758"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<msg timestamp="20181225 16:49:42.336" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" endtime="20181225 16:49:42.336" starttime="20181225 16:49:39.335"></status>
+</kw>
+<kw name="Set Browser Implicit Wait" library="Selenium2Library">
+<doc>Sets current browser's implicit wait in seconds.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<status status="PASS" endtime="20181225 16:49:42.341" starttime="20181225 16:49:42.337"></status>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Element Should Be Visible</arg>
+<arg>xpath=//div[@class='nav-icon']</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by `locator` is visible.</doc>
+<arguments>
+<arg>xpath=//div[@class='nav-icon']</arg>
+</arguments>
+<msg timestamp="20181225 16:49:42.343" level="INFO">Verifying element 'xpath=//div[@class='nav-icon']' is visible.</msg>
+<status status="PASS" endtime="20181225 16:49:42.429" starttime="20181225 16:49:42.342"></status>
+</kw>
+<msg timestamp="20181225 16:49:42.430" level="INFO">${result} = True</msg>
+<status status="PASS" endtime="20181225 16:49:42.430" starttime="20181225 16:49:42.341"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${result}</arg>
+<arg>Exit For Loop</arg>
+</arguments>
+<kw name="Exit For Loop" library="BuiltIn">
+<doc>Stops executing the enclosing for loop.</doc>
+<msg timestamp="20181225 16:49:42.431" level="INFO">Exiting for loop altogether.</msg>
+<status status="PASS" endtime="20181225 16:49:42.432" starttime="20181225 16:49:42.431"></status>
+</kw>
+<status status="PASS" endtime="20181225 16:49:42.432" starttime="20181225 16:49:42.430"></status>
+</kw>
+<status status="PASS" endtime="20181225 16:49:42.432" starttime="20181225 16:49:37.757"></status>
+</kw>
+<status status="PASS" endtime="20181225 16:49:42.433" starttime="20181225 16:49:37.757"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${result}</arg>
+<arg>Log</arg>
+<arg>Home Page Load OK!</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Home Page Load OK!</arg>
+</arguments>
+<msg timestamp="20181225 16:49:42.434" level="INFO">Home Page Load OK!</msg>
+<status status="PASS" endtime="20181225 16:49:42.435" starttime="20181225 16:49:42.434"></status>
+</kw>
+<status status="PASS" endtime="20181225 16:49:42.435" starttime="20181225 16:49:42.433"></status>
+</kw>
+<status status="PASS" endtime="20181225 16:49:42.435" starttime="20181225 16:49:37.757"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>**********Step 1**********</arg>
+</arguments>
+<status status="PASS" endtime="20181225 16:49:42.437" starttime="20181225 16:49:42.436"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${SearchDestination}</arg>
+</arguments>
+<msg timestamp="20181225 16:49:42.439" level="INFO">Clicking element '//div[@class='search-icon']'.</msg>
+<status status="PASS" endtime="20181225 16:49:42.782" starttime="20181225 16:49:42.438"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${SearchInput}</arg>
+<arg>${DestinationCountryValue}</arg>
+</arguments>
+<msg timestamp="20181225 16:49:42.787" level="INFO">Typing text 'Canada' into text field '//input[@class='input search-input']'</msg>
+<status status="PASS" endtime="20181225 16:49:43.724" starttime="20181225 16:49:42.786"></status>
+</kw>
+<kw name="Press Key" library="Selenium2Library">
+<doc>Simulates user pressing key on element identified by `locator`.</doc>
+<arguments>
+<arg>${SearchInput}</arg>
+<arg>\\13</arg>
+</arguments>
+<status status="PASS" endtime="20181225 16:49:43.857" starttime="20181225 16:49:43.726"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>**********Step 2 verification**********</arg>
+</arguments>
+<status status="PASS" endtime="20181225 16:49:43.858" starttime="20181225 16:49:43.858"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by `locator`.</doc>
+<arguments>
+<arg>${SearchResultsTitle}</arg>
+</arguments>
+<assign>
+<var>${search_results}</var>
+</assign>
+<msg timestamp="20181225 16:49:44.878" level="INFO">${search_results} = 6 Search Results</msg>
+<status status="PASS" endtime="20181225 16:49:44.878" starttime="20181225 16:49:43.859"></status>
+</kw>
+<kw name="Should Match Regexp" library="BuiltIn">
+<doc>Fails if ``string`` does not match ``pattern`` as a regular expression.</doc>
+<arguments>
+<arg>${search_results}</arg>
+<arg>\\d+\\s+Search Results</arg>
+</arguments>
+<status status="PASS" endtime="20181225 16:49:44.881" starttime="20181225 16:49:44.879"></status>
+</kw>
+<kw name="Get Matching Xpath Count" library="Selenium2Library">
+<doc>Returns number of elements matching `xpath`</doc>
+<arguments>
+<arg>${SearchResultsSection}</arg>
+</arguments>
+<assign>
+<var>${count}</var>
+</assign>
+<msg timestamp="20181225 16:49:44.933" level="INFO">${count} = 6</msg>
+<status status="PASS" endtime="20181225 16:49:44.933" starttime="20181225 16:49:44.883"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>${count} &gt; 0</arg>
+</arguments>
+<status status="PASS" endtime="20181225 16:49:44.938" starttime="20181225 16:49:44.936"></status>
+</kw>
+<status status="PASS" endtime="20181225 16:49:44.939" critical="yes" starttime="20181225 16:49:37.745"></status>
+</test>
+<test id="s1-s1-t2" name="02_Fill_contact_form">
+<kw type="setup" name="beforeTest" library="CommonFunctions">
+<kw type="for" name="${i} IN RANGE [ 5 ]">
+<kw type="foritem" name="${i} = 0">
+<kw name="Reload Page" library="Selenium2Library">
+<doc>Simulates user reloading page.</doc>
+<status status="PASS" endtime="20181225 16:49:47.279" starttime="20181225 16:49:44.949"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<msg timestamp="20181225 16:49:50.281" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" endtime="20181225 16:49:50.281" starttime="20181225 16:49:47.280"></status>
+</kw>
+<kw name="Set Browser Implicit Wait" library="Selenium2Library">
+<doc>Sets current browser's implicit wait in seconds.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<status status="PASS" endtime="20181225 16:49:50.287" starttime="20181225 16:49:50.282"></status>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Element Should Be Visible</arg>
+<arg>xpath=//div[@class='nav-icon']</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by `locator` is visible.</doc>
+<arguments>
+<arg>xpath=//div[@class='nav-icon']</arg>
+</arguments>
+<msg timestamp="20181225 16:49:50.290" level="INFO">Verifying element 'xpath=//div[@class='nav-icon']' is visible.</msg>
+<status status="PASS" endtime="20181225 16:49:50.366" starttime="20181225 16:49:50.289"></status>
+</kw>
+<msg timestamp="20181225 16:49:50.367" level="INFO">${result} = True</msg>
+<status status="PASS" endtime="20181225 16:49:50.367" starttime="20181225 16:49:50.288"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${result}</arg>
+<arg>Exit For Loop</arg>
+</arguments>
+<kw name="Exit For Loop" library="BuiltIn">
+<doc>Stops executing the enclosing for loop.</doc>
+<msg timestamp="20181225 16:49:50.369" level="INFO">Exiting for loop altogether.</msg>
+<status status="PASS" endtime="20181225 16:49:50.369" starttime="20181225 16:49:50.368"></status>
+</kw>
+<status status="PASS" endtime="20181225 16:49:50.369" starttime="20181225 16:49:50.367"></status>
+</kw>
+<status status="PASS" endtime="20181225 16:49:50.370" starttime="20181225 16:49:44.949"></status>
+</kw>
+<status status="PASS" endtime="20181225 16:49:50.370" starttime="20181225 16:49:44.948"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${result}</arg>
+<arg>Log</arg>
+<arg>Home Page Load OK!</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Home Page Load OK!</arg>
+</arguments>
+<msg timestamp="20181225 16:49:50.372" level="INFO">Home Page Load OK!</msg>
+<status status="PASS" endtime="20181225 16:49:50.372" starttime="20181225 16:49:50.371"></status>
+</kw>
+<status status="PASS" endtime="20181225 16:49:50.372" starttime="20181225 16:49:50.370"></status>
+</kw>
+<status status="PASS" endtime="20181225 16:49:50.373" starttime="20181225 16:49:44.947"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>**********Step 1**********</arg>
+</arguments>
+<status status="PASS" endtime="20181225 16:49:50.375" starttime="20181225 16:49:50.374"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${Contact}</arg>
+</arguments>
+<msg timestamp="20181225 16:49:50.377" level="INFO">Clicking element '//div/a[@href='/contact/']'.</msg>
+<status status="PASS" endtime="20181225 16:49:51.446" starttime="20181225 16:49:50.376"></status>
+</kw>
+<kw name="Select Window" library="Selenium2Library">
+<doc>Selects the window matching locator and return previous window handle.</doc>
+<arguments>
+<arg>NEW</arg>
+</arguments>
+<assign>
+<var>${handle}</var>
+</assign>
+<msg timestamp="20181225 16:49:51.490" level="INFO">${handle} = CDwindow-E3C1CAFD55D6F6BBEA839BCD7FA1878D</msg>
+<status status="PASS" endtime="20181225 16:49:51.490" starttime="20181225 16:49:51.450"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${ContactMessage}</arg>
+<arg>${ContactMessageValue}</arg>
+</arguments>
+<msg timestamp="20181225 16:49:51.494" level="INFO">Typing text 'Hello Test Message!' into text field '//textarea[@class='contact-msg']'</msg>
+<status status="PASS" endtime="20181225 16:49:53.885" starttime="20181225 16:49:51.492"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${ContactName}</arg>
+<arg>${ContactNameValue}</arg>
+</arguments>
+<msg timestamp="20181225 16:49:53.888" level="INFO">Typing text 'Cristian Lucian' into text field '//input[@class='contact-input']'</msg>
+<status status="PASS" endtime="20181225 16:49:54.390" starttime="20181225 16:49:53.886"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${ContactEmail}</arg>
+<arg>${ContactEmailValue}</arg>
+</arguments>
+<msg timestamp="20181225 16:49:54.393" level="INFO">Typing text 'tess008test@test.com' into text field '//input[@id='contact-email']'</msg>
+<status status="PASS" endtime="20181225 16:49:55.064" starttime="20181225 16:49:54.392"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${ConfirmBox}</arg>
+</arguments>
+<msg timestamp="20181225 16:49:55.065" level="INFO">Clicking element '//div[@class='col col-xs-12']/input[@id='confirm']'.</msg>
+<status status="PASS" endtime="20181225 16:49:55.189" starttime="20181225 16:49:55.064"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${ContactSubmit}</arg>
+</arguments>
+<msg timestamp="20181225 16:49:55.190" level="INFO">Clicking element '//button[@class='contact-submit']'.</msg>
+<status status="PASS" endtime="20181225 16:49:55.357" starttime="20181225 16:49:55.190"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>**********Step 2 - verification**********</arg>
+</arguments>
+<status status="PASS" endtime="20181225 16:49:55.358" starttime="20181225 16:49:55.358"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${CONTACT_PAGE_URL}</arg>
+</arguments>
+<assign>
+<var>${url_contact}</var>
+</assign>
+<msg timestamp="20181225 16:49:55.361" level="INFO">${url_contact} = http://magazine.trivago.com/contact/</msg>
+<status status="PASS" endtime="20181225 16:49:55.361" starttime="20181225 16:49:55.359"></status>
+</kw>
+<kw name="Get Location" library="Selenium2Library">
+<doc>Returns the current location.</doc>
+<assign>
+<var>${url}</var>
+</assign>
+<msg timestamp="20181225 16:49:55.380" level="INFO">${url} = http://magazine.trivago.com/contact/</msg>
+<status status="PASS" endtime="20181225 16:49:55.381" starttime="20181225 16:49:55.363"></status>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>${url_contact}</arg>
+</arguments>
+<msg timestamp="20181225 16:49:55.383" level="INFO">Argument types are:
+&lt;type 'unicode'&gt;
+&lt;type 'str'&gt;</msg>
+<status status="PASS" endtime="20181225 16:49:55.383" starttime="20181225 16:49:55.382"></status>
+</kw>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by `locator` is visible.</doc>
+<arguments>
+<arg>${ContactResponse}</arg>
+</arguments>
+<msg timestamp="20181225 16:49:55.385" level="INFO">Verifying element '//*[@id='app']//p[@class='feedback']' is visible.</msg>
+<status status="PASS" endtime="20181225 16:49:56.325" starttime="20181225 16:49:55.384"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by `locator`.</doc>
+<arguments>
+<arg>${ContactResponse}</arg>
+</arguments>
+<assign>
+<var>${message}</var>
+</assign>
+<msg timestamp="20181225 16:49:56.365" level="INFO">${message} = Message Sent Successfully!</msg>
+<status status="PASS" endtime="20181225 16:49:56.365" starttime="20181225 16:49:56.325"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${message}</arg>
+</arguments>
+<assign>
+<var>${message}</var>
+</assign>
+<msg timestamp="20181225 16:49:56.366" level="INFO">${message} = Message Sent Successfully!</msg>
+<status status="PASS" endtime="20181225 16:49:56.366" starttime="20181225 16:49:56.365"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${MESSAGE_SENT_SUCCESSFULLY}</arg>
+</arguments>
+<assign>
+<var>${message_verification}</var>
+</assign>
+<msg timestamp="20181225 16:49:56.367" level="INFO">${message_verification} = Message Sent Successfully!</msg>
+<status status="PASS" endtime="20181225 16:49:56.367" starttime="20181225 16:49:56.367"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${message_verification}</arg>
+</arguments>
+<assign>
+<var>${message_verification}</var>
+</assign>
+<msg timestamp="20181225 16:49:56.368" level="INFO">${message_verification} = Message Sent Successfully!</msg>
+<status status="PASS" endtime="20181225 16:49:56.368" starttime="20181225 16:49:56.368"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${message}</arg>
+<arg>${message_verification}</arg>
+</arguments>
+<status status="PASS" endtime="20181225 16:49:56.369" starttime="20181225 16:49:56.369"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>**********Step 3 get back to initial tab**********</arg>
+</arguments>
+<status status="PASS" endtime="20181225 16:49:56.370" starttime="20181225 16:49:56.370"></status>
+</kw>
+<kw name="Select Window" library="Selenium2Library">
+<doc>Selects the window matching locator and return previous window handle.</doc>
+<arguments>
+<arg>trivago Magazine</arg>
+</arguments>
+<status status="PASS" endtime="20181225 16:49:56.492" starttime="20181225 16:49:56.371"></status>
+</kw>
+<status status="PASS" endtime="20181225 16:49:56.493" critical="yes" starttime="20181225 16:49:44.945"></status>
+</test>
+<test id="s1-s1-t3" name="03_Subscribe_Newsletter">
+<kw type="setup" name="beforeTest" library="CommonFunctions">
+<kw type="for" name="${i} IN RANGE [ 5 ]">
+<kw type="foritem" name="${i} = 0">
+<kw name="Reload Page" library="Selenium2Library">
+<doc>Simulates user reloading page.</doc>
+<status status="PASS" endtime="20181225 16:49:57.786" starttime="20181225 16:49:56.497"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<msg timestamp="20181225 16:50:00.787" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" endtime="20181225 16:50:00.787" starttime="20181225 16:49:57.787"></status>
+</kw>
+<kw name="Set Browser Implicit Wait" library="Selenium2Library">
+<doc>Sets current browser's implicit wait in seconds.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<status status="PASS" endtime="20181225 16:50:00.793" starttime="20181225 16:50:00.788"></status>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Element Should Be Visible</arg>
+<arg>xpath=//div[@class='nav-icon']</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by `locator` is visible.</doc>
+<arguments>
+<arg>xpath=//div[@class='nav-icon']</arg>
+</arguments>
+<msg timestamp="20181225 16:50:00.795" level="INFO">Verifying element 'xpath=//div[@class='nav-icon']' is visible.</msg>
+<status status="PASS" endtime="20181225 16:50:01.050" starttime="20181225 16:50:00.794"></status>
+</kw>
+<msg timestamp="20181225 16:50:01.050" level="INFO">${result} = True</msg>
+<status status="PASS" endtime="20181225 16:50:01.050" starttime="20181225 16:50:00.793"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${result}</arg>
+<arg>Exit For Loop</arg>
+</arguments>
+<kw name="Exit For Loop" library="BuiltIn">
+<doc>Stops executing the enclosing for loop.</doc>
+<msg timestamp="20181225 16:50:01.053" level="INFO">Exiting for loop altogether.</msg>
+<status status="PASS" endtime="20181225 16:50:01.054" starttime="20181225 16:50:01.053"></status>
+</kw>
+<status status="PASS" endtime="20181225 16:50:01.054" starttime="20181225 16:50:01.051"></status>
+</kw>
+<status status="PASS" endtime="20181225 16:50:01.054" starttime="20181225 16:49:56.496"></status>
+</kw>
+<status status="PASS" endtime="20181225 16:50:01.054" starttime="20181225 16:49:56.496"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${result}</arg>
+<arg>Log</arg>
+<arg>Home Page Load OK!</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Home Page Load OK!</arg>
+</arguments>
+<msg timestamp="20181225 16:50:01.056" level="INFO">Home Page Load OK!</msg>
+<status status="PASS" endtime="20181225 16:50:01.057" starttime="20181225 16:50:01.056"></status>
+</kw>
+<status status="PASS" endtime="20181225 16:50:01.057" starttime="20181225 16:50:01.055"></status>
+</kw>
+<status status="PASS" endtime="20181225 16:50:01.057" starttime="20181225 16:49:56.495"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>**********Step 1**********</arg>
+</arguments>
+<status status="PASS" endtime="20181225 16:50:01.064" starttime="20181225 16:50:01.064"></status>
+</kw>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by `locator` is visible.</doc>
+<arguments>
+<arg>${NewsletterSubmit}</arg>
+</arguments>
+<msg timestamp="20181225 16:50:01.067" level="INFO">Verifying element '//div[@class='newsletter-submit']' is visible.</msg>
+<status status="PASS" endtime="20181225 16:50:01.195" starttime="20181225 16:50:01.066"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${NewsletterEmail}</arg>
+<arg>${NewsletterEmailValue}</arg>
+</arguments>
+<msg timestamp="20181225 16:50:01.209" level="INFO">Typing text 'tess9989@test.com' into text field '//input[@class='et-email']'</msg>
+<status status="PASS" endtime="20181225 16:50:01.949" starttime="20181225 16:50:01.208"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${NewsletterSubmit}</arg>
+</arguments>
+<msg timestamp="20181225 16:50:01.954" level="INFO">Clicking element '//div[@class='newsletter-submit']'.</msg>
+<status status="PASS" endtime="20181225 16:50:02.169" starttime="20181225 16:50:01.953"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>4s</arg>
+</arguments>
+<msg timestamp="20181225 16:50:06.172" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" endtime="20181225 16:50:06.172" starttime="20181225 16:50:02.171"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>**********Step 2 verification**********</arg>
+</arguments>
+<status status="PASS" endtime="20181225 16:50:06.174" starttime="20181225 16:50:06.173"></status>
+</kw>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by `locator` is visible.</doc>
+<arguments>
+<arg>${NewsletterResponse}</arg>
+</arguments>
+<msg timestamp="20181225 16:50:06.176" level="INFO">Verifying element '//div[@class='container-wide']/p[@class='submitted h1']' is visible.</msg>
+<status status="PASS" endtime="20181225 16:50:06.282" starttime="20181225 16:50:06.175"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by `locator`.</doc>
+<arguments>
+<arg>${NewsletterResponseText}</arg>
+</arguments>
+<assign>
+<var>${message}</var>
+</assign>
+<msg timestamp="20181225 16:50:06.386" level="INFO">${message} = You are now checked-in!</msg>
+<status status="PASS" endtime="20181225 16:50:06.386" starttime="20181225 16:50:06.283"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${message}</arg>
+</arguments>
+<assign>
+<var>${message}</var>
+</assign>
+<msg timestamp="20181225 16:50:06.390" level="INFO">${message} = You are now checked-in!</msg>
+<status status="PASS" endtime="20181225 16:50:06.390" starttime="20181225 16:50:06.389"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${EMAIL_SUBSCRIBE_MESSAGE}</arg>
+</arguments>
+<assign>
+<var>${message_verification}</var>
+</assign>
+<msg timestamp="20181225 16:50:06.393" level="INFO">${message_verification} = You are now checked-in!</msg>
+<status status="PASS" endtime="20181225 16:50:06.393" starttime="20181225 16:50:06.392"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${message_verification}</arg>
+</arguments>
+<assign>
+<var>${message_verification}</var>
+</assign>
+<msg timestamp="20181225 16:50:06.395" level="INFO">${message_verification} = You are now checked-in!</msg>
+<status status="PASS" endtime="20181225 16:50:06.396" starttime="20181225 16:50:06.394"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${message}</arg>
+<arg>${message_verification}</arg>
+</arguments>
+<status status="PASS" endtime="20181225 16:50:06.398" starttime="20181225 16:50:06.397"></status>
+</kw>
+<status status="PASS" endtime="20181225 16:50:06.399" critical="yes" starttime="20181225 16:49:56.494"></status>
+</test>
+<test id="s1-s1-t4" name="04_Navigate_destination_top_left">
+<kw type="setup" name="beforeTest" library="CommonFunctions">
+<kw type="for" name="${i} IN RANGE [ 5 ]">
+<kw type="foritem" name="${i} = 0">
+<kw name="Reload Page" library="Selenium2Library">
+<doc>Simulates user reloading page.</doc>
+<status status="PASS" endtime="20181225 16:50:08.908" starttime="20181225 16:50:06.410"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<msg timestamp="20181225 16:50:11.913" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" endtime="20181225 16:50:11.914" starttime="20181225 16:50:08.909"></status>
+</kw>
+<kw name="Set Browser Implicit Wait" library="Selenium2Library">
+<doc>Sets current browser's implicit wait in seconds.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<status status="PASS" endtime="20181225 16:50:11.918" starttime="20181225 16:50:11.914"></status>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Element Should Be Visible</arg>
+<arg>xpath=//div[@class='nav-icon']</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by `locator` is visible.</doc>
+<arguments>
+<arg>xpath=//div[@class='nav-icon']</arg>
+</arguments>
+<msg timestamp="20181225 16:50:11.920" level="INFO">Verifying element 'xpath=//div[@class='nav-icon']' is visible.</msg>
+<status status="PASS" endtime="20181225 16:50:11.997" starttime="20181225 16:50:11.920"></status>
+</kw>
+<msg timestamp="20181225 16:50:11.997" level="INFO">${result} = True</msg>
+<status status="PASS" endtime="20181225 16:50:11.998" starttime="20181225 16:50:11.919"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${result}</arg>
+<arg>Exit For Loop</arg>
+</arguments>
+<kw name="Exit For Loop" library="BuiltIn">
+<doc>Stops executing the enclosing for loop.</doc>
+<msg timestamp="20181225 16:50:11.999" level="INFO">Exiting for loop altogether.</msg>
+<status status="PASS" endtime="20181225 16:50:12.000" starttime="20181225 16:50:11.999"></status>
+</kw>
+<status status="PASS" endtime="20181225 16:50:12.000" starttime="20181225 16:50:11.998"></status>
+</kw>
+<status status="PASS" endtime="20181225 16:50:12.000" starttime="20181225 16:50:06.409"></status>
+</kw>
+<status status="PASS" endtime="20181225 16:50:12.000" starttime="20181225 16:50:06.409"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${result}</arg>
+<arg>Log</arg>
+<arg>Home Page Load OK!</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Home Page Load OK!</arg>
+</arguments>
+<msg timestamp="20181225 16:50:12.002" level="INFO">Home Page Load OK!</msg>
+<status status="PASS" endtime="20181225 16:50:12.002" starttime="20181225 16:50:12.001"></status>
+</kw>
+<status status="PASS" endtime="20181225 16:50:12.002" starttime="20181225 16:50:12.001"></status>
+</kw>
+<status status="PASS" endtime="20181225 16:50:12.003" starttime="20181225 16:50:06.407"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>**********Step 1**********</arg>
+</arguments>
+<status status="PASS" endtime="20181225 16:50:12.005" starttime="20181225 16:50:12.004"></status>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<arguments>
+<arg>3 times</arg>
+<arg>2s</arg>
+<arg>Click Element</arg>
+<arg>${MenuOpen}</arg>
+</arguments>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${MenuOpen}</arg>
+</arguments>
+<msg timestamp="20181225 16:50:12.008" level="INFO">Clicking element '//div[@class='nav-icon']'.</msg>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20181225 16:50:13.344" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20181225 16:50:13.344" starttime="20181225 16:50:12.300"></status>
+</kw>
+<msg timestamp="20181225 16:50:13.355" level="FAIL">WebDriverException: Message: unknown error: Element &lt;div class="nav-icon"&gt;...&lt;/div&gt; is not clickable at point (192, 4). Other element would receive the click: &lt;div class="fixed-header"&gt;...&lt;/div&gt;
+  (Session info: chrome=71.0.3578.98)
+  (Driver info: chromedriver=2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e),platform=Windows NT 6.1.7601 SP1 x86_64)
+</msg>
+<status status="FAIL" endtime="20181225 16:50:13.355" starttime="20181225 16:50:12.007"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${MenuOpen}</arg>
+</arguments>
+<msg timestamp="20181225 16:50:15.357" level="INFO">Clicking element '//div[@class='nav-icon']'.</msg>
+<status status="PASS" endtime="20181225 16:50:15.691" starttime="20181225 16:50:15.356"></status>
+</kw>
+<status status="PASS" endtime="20181225 16:50:15.692" starttime="20181225 16:50:12.006"></status>
+</kw>
+<kw name="Get Matching Xpath Count" library="Selenium2Library">
+<doc>Returns number of elements matching `xpath`</doc>
+<arguments>
+<arg>${DestinationContainer}</arg>
+</arguments>
+<assign>
+<var>${rowcount}</var>
+</assign>
+<msg timestamp="20181225 16:50:15.854" level="INFO">${rowcount} = 6</msg>
+<status status="PASS" endtime="20181225 16:50:15.854" starttime="20181225 16:50:15.693"></status>
+</kw>
+<kw type="for" name="${item} IN RANGE [ 1 | ${rowcount} ]">
+<kw type="foritem" name="${item} = 1">
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by `locator`.</doc>
+<arguments>
+<arg>${DestinationContainer}/div[${item}]${DestinationSingle}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20181225 16:50:16.049" level="INFO">${status} = WEST</msg>
+<status status="PASS" endtime="20181225 16:50:16.049" starttime="20181225 16:50:15.864"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${status}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20181225 16:50:16.051" level="INFO">${status} = WEST</msg>
+<status status="PASS" endtime="20181225 16:50:16.051" starttime="20181225 16:50:16.050"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}'=='${LocationSearchValue}'</arg>
+<arg>Click Element</arg>
+<arg>${DestinationContainer}/div[${item}]${DestinationSingle}</arg>
+</arguments>
+<status status="PASS" endtime="20181225 16:50:16.054" starttime="20181225 16:50:16.052"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20181225 16:50:18.055" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20181225 16:50:18.055" starttime="20181225 16:50:16.054"></status>
+</kw>
+<status status="PASS" endtime="20181225 16:50:18.055" starttime="20181225 16:50:15.864"></status>
+</kw>
+<kw type="foritem" name="${item} = 2">
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by `locator`.</doc>
+<arguments>
+<arg>${DestinationContainer}/div[${item}]${DestinationSingle}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20181225 16:50:18.150" level="INFO">${status} = SOUTHWEST</msg>
+<status status="PASS" endtime="20181225 16:50:18.150" starttime="20181225 16:50:18.056"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${status}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20181225 16:50:18.152" level="INFO">${status} = SOUTHWEST</msg>
+<status status="PASS" endtime="20181225 16:50:18.152" starttime="20181225 16:50:18.151"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}'=='${LocationSearchValue}'</arg>
+<arg>Click Element</arg>
+<arg>${DestinationContainer}/div[${item}]${DestinationSingle}</arg>
+</arguments>
+<status status="PASS" endtime="20181225 16:50:18.154" starttime="20181225 16:50:18.153"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20181225 16:50:20.154" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20181225 16:50:20.154" starttime="20181225 16:50:18.154"></status>
+</kw>
+<status status="PASS" endtime="20181225 16:50:20.155" starttime="20181225 16:50:18.056"></status>
+</kw>
+<kw type="foritem" name="${item} = 3">
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by `locator`.</doc>
+<arguments>
+<arg>${DestinationContainer}/div[${item}]${DestinationSingle}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20181225 16:50:20.269" level="INFO">${status} = MIDWEST</msg>
+<status status="PASS" endtime="20181225 16:50:20.269" starttime="20181225 16:50:20.156"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${status}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20181225 16:50:20.271" level="INFO">${status} = MIDWEST</msg>
+<status status="PASS" endtime="20181225 16:50:20.271" starttime="20181225 16:50:20.270"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}'=='${LocationSearchValue}'</arg>
+<arg>Click Element</arg>
+<arg>${DestinationContainer}/div[${item}]${DestinationSingle}</arg>
+</arguments>
+<status status="PASS" endtime="20181225 16:50:20.274" starttime="20181225 16:50:20.272"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20181225 16:50:22.276" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20181225 16:50:22.276" starttime="20181225 16:50:20.275"></status>
+</kw>
+<status status="PASS" endtime="20181225 16:50:22.276" starttime="20181225 16:50:20.155"></status>
+</kw>
+<kw type="foritem" name="${item} = 4">
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by `locator`.</doc>
+<arguments>
+<arg>${DestinationContainer}/div[${item}]${DestinationSingle}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20181225 16:50:22.376" level="INFO">${status} = NORTHEAST</msg>
+<status status="PASS" endtime="20181225 16:50:22.376" starttime="20181225 16:50:22.277"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${status}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20181225 16:50:22.378" level="INFO">${status} = NORTHEAST</msg>
+<status status="PASS" endtime="20181225 16:50:22.378" starttime="20181225 16:50:22.377"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}'=='${LocationSearchValue}'</arg>
+<arg>Click Element</arg>
+<arg>${DestinationContainer}/div[${item}]${DestinationSingle}</arg>
+</arguments>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${DestinationContainer}/div[${item}]${DestinationSingle}</arg>
+</arguments>
+<msg timestamp="20181225 16:50:22.381" level="INFO">Clicking element '//div[@class='swiper-wrapper']/div[4]//div[@class='destination-menu']'.</msg>
+<status status="PASS" endtime="20181225 16:50:22.710" starttime="20181225 16:50:22.380"></status>
+</kw>
+<status status="PASS" endtime="20181225 16:50:22.710" starttime="20181225 16:50:22.379"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20181225 16:50:24.711" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20181225 16:50:24.711" starttime="20181225 16:50:22.711"></status>
+</kw>
+<status status="PASS" endtime="20181225 16:50:24.711" starttime="20181225 16:50:22.277"></status>
+</kw>
+<kw type="foritem" name="${item} = 5">
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by `locator`.</doc>
+<arguments>
+<arg>${DestinationContainer}/div[${item}]${DestinationSingle}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20181225 16:50:24.802" level="INFO">${status} = </msg>
+<status status="PASS" endtime="20181225 16:50:24.803" starttime="20181225 16:50:24.712"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${status}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20181225 16:50:24.804" level="INFO">${status} = </msg>
+<status status="PASS" endtime="20181225 16:50:24.804" starttime="20181225 16:50:24.803"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}'=='${LocationSearchValue}'</arg>
+<arg>Click Element</arg>
+<arg>${DestinationContainer}/div[${item}]${DestinationSingle}</arg>
+</arguments>
+<status status="PASS" endtime="20181225 16:50:24.805" starttime="20181225 16:50:24.804"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20181225 16:50:26.805" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20181225 16:50:26.805" starttime="20181225 16:50:24.805"></status>
+</kw>
+<status status="PASS" endtime="20181225 16:50:26.805" starttime="20181225 16:50:24.711"></status>
+</kw>
+<status status="PASS" endtime="20181225 16:50:26.806" starttime="20181225 16:50:15.863"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>**********Step 2 verification**********</arg>
+</arguments>
+<status status="PASS" endtime="20181225 16:50:26.808" starttime="20181225 16:50:26.807"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${NORTHEAST_URL}</arg>
+</arguments>
+<assign>
+<var>${url_northeast}</var>
+</assign>
+<msg timestamp="20181225 16:50:26.810" level="INFO">${url_northeast} = http://magazine.trivago.com/destination/usa/northeast/</msg>
+<status status="PASS" endtime="20181225 16:50:26.810" starttime="20181225 16:50:26.809"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20181225 16:50:28.812" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20181225 16:50:28.812" starttime="20181225 16:50:26.811"></status>
+</kw>
+<kw name="Get Location" library="Selenium2Library">
+<doc>Returns the current location.</doc>
+<assign>
+<var>${url}</var>
+</assign>
+<msg timestamp="20181225 16:50:28.833" level="INFO">${url} = http://magazine.trivago.com/destination/usa/northeast/</msg>
+<status status="PASS" endtime="20181225 16:50:28.833" starttime="20181225 16:50:28.813"></status>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>${url_northeast}</arg>
+</arguments>
+<msg timestamp="20181225 16:50:28.837" level="INFO">Argument types are:
+&lt;type 'unicode'&gt;
+&lt;type 'str'&gt;</msg>
+<status status="PASS" endtime="20181225 16:50:28.837" starttime="20181225 16:50:28.836"></status>
+</kw>
+<status status="PASS" endtime="20181225 16:50:28.839" critical="yes" starttime="20181225 16:50:06.405"></status>
+</test>
+<kw type="teardown" name="afterSuite" library="CommonFunctions">
+<kw name="Close All Browsers" library="Selenium2Library">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" endtime="20181225 16:50:29.764" starttime="20181225 16:50:28.847"></status>
+</kw>
+<status status="PASS" endtime="20181225 16:50:29.764" starttime="20181225 16:50:28.846"></status>
+</kw>
+<status status="PASS" endtime="20181225 16:50:29.765" starttime="20181225 16:49:28.850"></status>
+</suite>
+<suite source="C:\work\TrivFunctionalTesting\TestSuites\02-Suite_SDET_Task1.robot" id="s1-s2" name="02-Suite SDET Task1">
+<kw type="setup" name="beforeSuite" library="CommonFunctions">
+<kw name="Append To Environment Variable" library="OperatingSystem">
+<doc>Appends given ``values`` to environment variable ``name``.</doc>
+<arguments>
+<arg>PATH</arg>
+<arg>C:\\work\\TrivFunctionalTesting\\Resource/../ExternalComponents/</arg>
+</arguments>
+<msg timestamp="20181225 16:50:29.882" level="INFO">Environment variable 'PATH' set to value 'C:\oraclexe\app\oracle\product\11.2.0\server\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\idmu\common;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\TortoiseSVN\bin;C:\Program Files (x86)\Sennheiser\HeadSetup\;C:\Python27;C:\Program Files\Java\jdk1.8.0_172\bin;C:\Program Files\Java\jre1.8.0_172\bin;C:\Python27\Scripts;C:\##orange_work\apache-maven-3.5.4\bin;C:\Program Files\Git\cmd;C:\Program Files (x86)\PuTTY\;C:\Program Files\TortoiseGit\bin;C:\Program Files\nodejs\;C:\Program Files (x86)\Google\Chrome\Application;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\idmu\common;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\TortoiseSVN\bin;C:\Program Files (x86)\Sennheiser\HeadSetup\;C:\Python27;C:\Program Files\Java\jdk1.8.0_172\bin;C:\Program Files\Java\jre1.8.0_172\bin;C:\Python27\Scripts;C:\Users\lucian.cristian\AppData\Local\Programs\Git\cmd;C:\Users\lucian.cristian\AppData\Roaming\npm;C:\work\TrivFunctionalTesting\Resource/../ExternalComponents/;C:\work\TrivFunctionalTesting\Resource/../ExternalComponents/'.</msg>
+<status status="PASS" endtime="20181225 16:50:29.883" starttime="20181225 16:50:29.881"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${BROWSER}'=='chrome' or '${BROWSER}'=='googlechrome'</arg>
+<arg>Evaluate</arg>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys</arg>
+</arguments>
+<assign>
+<var>${chrome_options}</var>
+</assign>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys</arg>
+</arguments>
+<status status="PASS" endtime="20181225 16:50:29.886" starttime="20181225 16:50:29.885"></status>
+</kw>
+<msg timestamp="20181225 16:50:29.886" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x0000000003A08D68&gt;</msg>
+<status status="PASS" endtime="20181225 16:50:29.887" starttime="20181225 16:50:29.883"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${BROWSER}'=='chrome' or '${BROWSER}'=='googlechrome'</arg>
+<arg>Run Keywords</arg>
+<arg>Call Method</arg>
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-cache</arg>
+<arg>AND</arg>
+<arg>Create Webdriver</arg>
+<arg>Chrome</arg>
+<arg>chrome_options=${chrome_options}</arg>
+</arguments>
+<kw name="Run Keywords" library="BuiltIn">
+<doc>Executes all the given keywords in a sequence.</doc>
+<arguments>
+<arg>Call Method</arg>
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-cache</arg>
+<arg>AND</arg>
+<arg>Create Webdriver</arg>
+<arg>Chrome</arg>
+<arg>chrome_options=${chrome_options}</arg>
+</arguments>
+<kw name="Call Method" library="BuiltIn">
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<arguments>
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-cache</arg>
+</arguments>
+<status status="PASS" endtime="20181225 16:50:29.893" starttime="20181225 16:50:29.892"></status>
+</kw>
+<kw name="Create Webdriver" library="Selenium2Library">
+<doc>Creates an instance of a WebDriver.</doc>
+<arguments>
+<arg>Chrome</arg>
+<arg>chrome_options=${chrome_options}</arg>
+</arguments>
+<msg timestamp="20181225 16:50:29.895" level="INFO">Creating an instance of the Chrome WebDriver</msg>
+<status status="PASS" endtime="20181225 16:50:34.006" starttime="20181225 16:50:29.894"></status>
+</kw>
+<status status="PASS" endtime="20181225 16:50:34.006" starttime="20181225 16:50:29.889"></status>
+</kw>
+<status status="PASS" endtime="20181225 16:50:34.006" starttime="20181225 16:50:29.887"></status>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20181225 16:50:35.165" starttime="20181225 16:50:34.007"></status>
+</kw>
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${URL}</arg>
+</arguments>
+<msg timestamp="20181225 16:50:35.168" level="INFO">Opening url 'http://magazine.trivago.com/'</msg>
+<status status="PASS" endtime="20181225 16:50:39.722" starttime="20181225 16:50:35.166"></status>
+</kw>
+<status status="PASS" endtime="20181225 16:50:39.722" starttime="20181225 16:50:29.879"></status>
+</kw>
+<test id="s1-s2-t1" name="01_Verify_trending_article">
+<kw type="setup" name="beforeTest" library="CommonFunctions">
+<kw type="for" name="${i} IN RANGE [ 5 ]">
+<kw type="foritem" name="${i} = 0">
+<kw name="Reload Page" library="Selenium2Library">
+<doc>Simulates user reloading page.</doc>
+<status status="PASS" endtime="20181225 16:50:41.200" starttime="20181225 16:50:39.725"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<msg timestamp="20181225 16:50:44.201" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" endtime="20181225 16:50:44.201" starttime="20181225 16:50:41.201"></status>
+</kw>
+<kw name="Set Browser Implicit Wait" library="Selenium2Library">
+<doc>Sets current browser's implicit wait in seconds.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<status status="PASS" endtime="20181225 16:50:44.206" starttime="20181225 16:50:44.202"></status>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Element Should Be Visible</arg>
+<arg>xpath=//div[@class='nav-icon']</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by `locator` is visible.</doc>
+<arguments>
+<arg>xpath=//div[@class='nav-icon']</arg>
+</arguments>
+<msg timestamp="20181225 16:50:44.208" level="INFO">Verifying element 'xpath=//div[@class='nav-icon']' is visible.</msg>
+<status status="PASS" endtime="20181225 16:50:44.292" starttime="20181225 16:50:44.207"></status>
+</kw>
+<msg timestamp="20181225 16:50:44.293" level="INFO">${result} = True</msg>
+<status status="PASS" endtime="20181225 16:50:44.293" starttime="20181225 16:50:44.206"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${result}</arg>
+<arg>Exit For Loop</arg>
+</arguments>
+<kw name="Exit For Loop" library="BuiltIn">
+<doc>Stops executing the enclosing for loop.</doc>
+<msg timestamp="20181225 16:50:44.295" level="INFO">Exiting for loop altogether.</msg>
+<status status="PASS" endtime="20181225 16:50:44.295" starttime="20181225 16:50:44.294"></status>
+</kw>
+<status status="PASS" endtime="20181225 16:50:44.295" starttime="20181225 16:50:44.293"></status>
+</kw>
+<status status="PASS" endtime="20181225 16:50:44.295" starttime="20181225 16:50:39.725"></status>
+</kw>
+<status status="PASS" endtime="20181225 16:50:44.295" starttime="20181225 16:50:39.725"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${result}</arg>
+<arg>Log</arg>
+<arg>Home Page Load OK!</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Home Page Load OK!</arg>
+</arguments>
+<msg timestamp="20181225 16:50:44.297" level="INFO">Home Page Load OK!</msg>
+<status status="PASS" endtime="20181225 16:50:44.297" starttime="20181225 16:50:44.297"></status>
+</kw>
+<status status="PASS" endtime="20181225 16:50:44.298" starttime="20181225 16:50:44.296"></status>
+</kw>
+<status status="PASS" endtime="20181225 16:50:44.298" starttime="20181225 16:50:39.724"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>**********Step 1**********</arg>
+</arguments>
+<status status="PASS" endtime="20181225 16:50:44.299" starttime="20181225 16:50:44.299"></status>
+</kw>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by `locator` is visible.</doc>
+<arguments>
+<arg>${RecentArticles}</arg>
+</arguments>
+<msg timestamp="20181225 16:50:44.301" level="INFO">Verifying element '//div[@class='recent-articles-section row ']' is visible.</msg>
+<status status="PASS" endtime="20181225 16:50:44.386" starttime="20181225 16:50:44.300"></status>
+</kw>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by `locator` is visible.</doc>
+<arguments>
+<arg>${ArticlesTitle1}</arg>
+</arguments>
+<msg timestamp="20181225 16:50:44.388" level="INFO">Verifying element '//h2[@class='section-title']' is visible.</msg>
+<status status="PASS" endtime="20181225 16:50:44.481" starttime="20181225 16:50:44.387"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by `locator`.</doc>
+<arguments>
+<arg>${ArticlesTitle2}</arg>
+</arguments>
+<assign>
+<var>${trending_now}</var>
+</assign>
+<msg timestamp="20181225 16:50:44.583" level="INFO">${trending_now} = Trending Now</msg>
+<status status="PASS" endtime="20181225 16:50:44.583" starttime="20181225 16:50:44.482"></status>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<arguments>
+<arg>${trending_now}</arg>
+<arg>Trending Now</arg>
+</arguments>
+<status status="PASS" endtime="20181225 16:50:44.586" starttime="20181225 16:50:44.585"></status>
+</kw>
+<kw name="Get Matching Xpath Count" library="Selenium2Library">
+<doc>Returns number of elements matching `xpath`</doc>
+<arguments>
+<arg>${RecentArticles }/div</arg>
+</arguments>
+<assign>
+<var>${rowcount}</var>
+</assign>
+<msg timestamp="20181225 16:50:44.626" level="INFO">${rowcount} = 5</msg>
+<status status="PASS" endtime="20181225 16:50:44.626" starttime="20181225 16:50:44.587"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>${rowcount}&gt;0</arg>
+</arguments>
+<status status="PASS" endtime="20181225 16:50:44.628" starttime="20181225 16:50:44.627"></status>
+</kw>
+<kw type="for" name="${item} IN RANGE [ 1 | ${rowcount}+1 ]">
+<kw type="foritem" name="${item} = 1">
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Return value of element attribute.</doc>
+<arguments>
+<arg>${RecentArticles}/div[${item}]/a@href</arg>
+</arguments>
+<assign>
+<var>${url}</var>
+</assign>
+<msg timestamp="20181225 16:50:44.691" level="INFO">${url} = http://magazine.trivago.com/hotels-for-runners/</msg>
+<status status="PASS" endtime="20181225 16:50:44.691" starttime="20181225 16:50:44.630"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${RecentArticles}/div[${item}]</arg>
+</arguments>
+<msg timestamp="20181225 16:50:44.693" level="INFO">Clicking element '//div[@class='recent-articles-section row ']/div[1]'.</msg>
+<status status="PASS" endtime="20181225 16:50:45.179" starttime="20181225 16:50:44.692"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20181225 16:50:47.180" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20181225 16:50:47.181" starttime="20181225 16:50:45.180"></status>
+</kw>
+<kw name="Get Location" library="Selenium2Library">
+<doc>Returns the current location.</doc>
+<assign>
+<var>${url_current}</var>
+</assign>
+<msg timestamp="20181225 16:50:47.823" level="INFO">${url_current} = http://magazine.trivago.com/hotels-for-runners/</msg>
+<status status="PASS" endtime="20181225 16:50:47.823" starttime="20181225 16:50:47.181"></status>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>${url_current}</arg>
+</arguments>
+<status status="PASS" endtime="20181225 16:50:47.825" starttime="20181225 16:50:47.824"></status>
+</kw>
+<kw name="Go Back" library="Selenium2Library">
+<doc>Simulates the user clicking the "back" button on their browser.</doc>
+<status status="PASS" endtime="20181225 16:50:47.988" starttime="20181225 16:50:47.825"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20181225 16:50:49.990" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20181225 16:50:49.990" starttime="20181225 16:50:47.989"></status>
+</kw>
+<status status="PASS" endtime="20181225 16:50:49.990" starttime="20181225 16:50:44.630"></status>
+</kw>
+<kw type="foritem" name="${item} = 2">
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Return value of element attribute.</doc>
+<arguments>
+<arg>${RecentArticles}/div[${item}]/a@href</arg>
+</arguments>
+<assign>
+<var>${url}</var>
+</assign>
+<msg timestamp="20181225 16:50:50.098" level="INFO">${url} = http://magazine.trivago.com/spa-resorts-in-ny/</msg>
+<status status="PASS" endtime="20181225 16:50:50.098" starttime="20181225 16:50:49.991"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${RecentArticles}/div[${item}]</arg>
+</arguments>
+<msg timestamp="20181225 16:50:50.100" level="INFO">Clicking element '//div[@class='recent-articles-section row ']/div[2]'.</msg>
+<status status="PASS" endtime="20181225 16:50:50.421" starttime="20181225 16:50:50.099"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20181225 16:50:52.423" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20181225 16:50:52.423" starttime="20181225 16:50:50.422"></status>
+</kw>
+<kw name="Get Location" library="Selenium2Library">
+<doc>Returns the current location.</doc>
+<assign>
+<var>${url_current}</var>
+</assign>
+<msg timestamp="20181225 16:50:52.435" level="INFO">${url_current} = http://magazine.trivago.com/spa-resorts-in-ny/</msg>
+<status status="PASS" endtime="20181225 16:50:52.436" starttime="20181225 16:50:52.424"></status>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>${url_current}</arg>
+</arguments>
+<status status="PASS" endtime="20181225 16:50:52.440" starttime="20181225 16:50:52.439"></status>
+</kw>
+<kw name="Go Back" library="Selenium2Library">
+<doc>Simulates the user clicking the "back" button on their browser.</doc>
+<status status="PASS" endtime="20181225 16:50:52.501" starttime="20181225 16:50:52.440"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20181225 16:50:54.503" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20181225 16:50:54.503" starttime="20181225 16:50:52.502"></status>
+</kw>
+<status status="PASS" endtime="20181225 16:50:54.503" starttime="20181225 16:50:49.991"></status>
+</kw>
+<kw type="foritem" name="${item} = 3">
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Return value of element attribute.</doc>
+<arguments>
+<arg>${RecentArticles}/div[${item}]/a@href</arg>
+</arguments>
+<assign>
+<var>${url}</var>
+</assign>
+<msg timestamp="20181225 16:50:54.540" level="INFO">${url} = http://magazine.trivago.com/best-babymoon-destinations/</msg>
+<status status="PASS" endtime="20181225 16:50:54.540" starttime="20181225 16:50:54.504"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${RecentArticles}/div[${item}]</arg>
+</arguments>
+<msg timestamp="20181225 16:50:54.541" level="INFO">Clicking element '//div[@class='recent-articles-section row ']/div[3]'.</msg>
+<status status="PASS" endtime="20181225 16:50:54.686" starttime="20181225 16:50:54.541"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20181225 16:50:56.686" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20181225 16:50:56.686" starttime="20181225 16:50:54.686"></status>
+</kw>
+<kw name="Get Location" library="Selenium2Library">
+<doc>Returns the current location.</doc>
+<assign>
+<var>${url_current}</var>
+</assign>
+<msg timestamp="20181225 16:50:56.695" level="INFO">${url_current} = http://magazine.trivago.com/best-babymoon-destinations/</msg>
+<status status="PASS" endtime="20181225 16:50:56.695" starttime="20181225 16:50:56.686"></status>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>${url_current}</arg>
+</arguments>
+<status status="PASS" endtime="20181225 16:50:56.696" starttime="20181225 16:50:56.695"></status>
+</kw>
+<kw name="Go Back" library="Selenium2Library">
+<doc>Simulates the user clicking the "back" button on their browser.</doc>
+<status status="PASS" endtime="20181225 16:50:56.818" starttime="20181225 16:50:56.696"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20181225 16:50:58.818" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20181225 16:50:58.819" starttime="20181225 16:50:56.818"></status>
+</kw>
+<status status="PASS" endtime="20181225 16:50:58.819" starttime="20181225 16:50:54.503"></status>
+</kw>
+<kw type="foritem" name="${item} = 4">
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Return value of element attribute.</doc>
+<arguments>
+<arg>${RecentArticles}/div[${item}]/a@href</arg>
+</arguments>
+<assign>
+<var>${url}</var>
+</assign>
+<msg timestamp="20181225 16:50:59.002" level="INFO">${url} = http://magazine.trivago.com/spring-training-florida-grapefruit-league/</msg>
+<status status="PASS" endtime="20181225 16:50:59.002" starttime="20181225 16:50:58.821"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${RecentArticles}/div[${item}]</arg>
+</arguments>
+<msg timestamp="20181225 16:50:59.004" level="INFO">Clicking element '//div[@class='recent-articles-section row ']/div[4]'.</msg>
+<status status="PASS" endtime="20181225 16:50:59.713" starttime="20181225 16:50:59.003"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20181225 16:51:01.714" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20181225 16:51:01.714" starttime="20181225 16:50:59.714"></status>
+</kw>
+<kw name="Get Location" library="Selenium2Library">
+<doc>Returns the current location.</doc>
+<assign>
+<var>${url_current}</var>
+</assign>
+<msg timestamp="20181225 16:51:01.737" level="INFO">${url_current} = http://magazine.trivago.com/spring-training-florida-grapefruit-league/</msg>
+<status status="PASS" endtime="20181225 16:51:01.737" starttime="20181225 16:51:01.715"></status>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>${url_current}</arg>
+</arguments>
+<status status="PASS" endtime="20181225 16:51:01.738" starttime="20181225 16:51:01.737"></status>
+</kw>
+<kw name="Go Back" library="Selenium2Library">
+<doc>Simulates the user clicking the "back" button on their browser.</doc>
+<status status="PASS" endtime="20181225 16:51:01.860" starttime="20181225 16:51:01.739"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20181225 16:51:03.864" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20181225 16:51:03.865" starttime="20181225 16:51:01.860"></status>
+</kw>
+<status status="PASS" endtime="20181225 16:51:03.865" starttime="20181225 16:50:58.819"></status>
+</kw>
+<kw type="foritem" name="${item} = 5">
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Return value of element attribute.</doc>
+<arguments>
+<arg>${RecentArticles}/div[${item}]/a@href</arg>
+</arguments>
+<assign>
+<var>${url}</var>
+</assign>
+<msg timestamp="20181225 16:51:03.948" level="INFO">${url} = http://magazine.trivago.com/romantic-getaways-in-southern-california/</msg>
+<status status="PASS" endtime="20181225 16:51:03.948" starttime="20181225 16:51:03.866"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${RecentArticles}/div[${item}]</arg>
+</arguments>
+<msg timestamp="20181225 16:51:03.949" level="INFO">Clicking element '//div[@class='recent-articles-section row ']/div[5]'.</msg>
+<status status="PASS" endtime="20181225 16:51:04.306" starttime="20181225 16:51:03.948"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20181225 16:51:06.307" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20181225 16:51:06.307" starttime="20181225 16:51:04.306"></status>
+</kw>
+<kw name="Get Location" library="Selenium2Library">
+<doc>Returns the current location.</doc>
+<assign>
+<var>${url_current}</var>
+</assign>
+<msg timestamp="20181225 16:51:06.318" level="INFO">${url_current} = http://magazine.trivago.com/romantic-getaways-in-southern-california/</msg>
+<status status="PASS" endtime="20181225 16:51:06.318" starttime="20181225 16:51:06.308"></status>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>${url_current}</arg>
+</arguments>
+<status status="PASS" endtime="20181225 16:51:06.319" starttime="20181225 16:51:06.318"></status>
+</kw>
+<kw name="Go Back" library="Selenium2Library">
+<doc>Simulates the user clicking the "back" button on their browser.</doc>
+<status status="PASS" endtime="20181225 16:51:06.381" starttime="20181225 16:51:06.320"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20181225 16:51:08.381" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20181225 16:51:08.381" starttime="20181225 16:51:06.381"></status>
+</kw>
+<status status="PASS" endtime="20181225 16:51:08.381" starttime="20181225 16:51:03.865"></status>
+</kw>
+<status status="PASS" endtime="20181225 16:51:08.381" starttime="20181225 16:50:44.629"></status>
+</kw>
+<status status="PASS" endtime="20181225 16:51:08.383" critical="yes" starttime="20181225 16:50:39.722"></status>
+</test>
+<test id="s1-s2-t2" name="02_Select_language">
+<kw type="setup" name="beforeTest" library="CommonFunctions">
+<kw type="for" name="${i} IN RANGE [ 5 ]">
+<kw type="foritem" name="${i} = 0">
+<kw name="Reload Page" library="Selenium2Library">
+<doc>Simulates user reloading page.</doc>
+<status status="PASS" endtime="20181225 16:51:09.846" starttime="20181225 16:51:08.386"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<msg timestamp="20181225 16:51:12.847" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" endtime="20181225 16:51:12.847" starttime="20181225 16:51:09.847"></status>
+</kw>
+<kw name="Set Browser Implicit Wait" library="Selenium2Library">
+<doc>Sets current browser's implicit wait in seconds.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<status status="PASS" endtime="20181225 16:51:12.852" starttime="20181225 16:51:12.848"></status>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Element Should Be Visible</arg>
+<arg>xpath=//div[@class='nav-icon']</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by `locator` is visible.</doc>
+<arguments>
+<arg>xpath=//div[@class='nav-icon']</arg>
+</arguments>
+<msg timestamp="20181225 16:51:12.854" level="INFO">Verifying element 'xpath=//div[@class='nav-icon']' is visible.</msg>
+<status status="PASS" endtime="20181225 16:51:12.940" starttime="20181225 16:51:12.853"></status>
+</kw>
+<msg timestamp="20181225 16:51:12.940" level="INFO">${result} = True</msg>
+<status status="PASS" endtime="20181225 16:51:12.940" starttime="20181225 16:51:12.852"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${result}</arg>
+<arg>Exit For Loop</arg>
+</arguments>
+<kw name="Exit For Loop" library="BuiltIn">
+<doc>Stops executing the enclosing for loop.</doc>
+<msg timestamp="20181225 16:51:12.942" level="INFO">Exiting for loop altogether.</msg>
+<status status="PASS" endtime="20181225 16:51:12.943" starttime="20181225 16:51:12.942"></status>
+</kw>
+<status status="PASS" endtime="20181225 16:51:12.943" starttime="20181225 16:51:12.941"></status>
+</kw>
+<status status="PASS" endtime="20181225 16:51:12.943" starttime="20181225 16:51:08.386"></status>
+</kw>
+<status status="PASS" endtime="20181225 16:51:12.943" starttime="20181225 16:51:08.386"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${result}</arg>
+<arg>Log</arg>
+<arg>Home Page Load OK!</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Home Page Load OK!</arg>
+</arguments>
+<msg timestamp="20181225 16:51:12.945" level="INFO">Home Page Load OK!</msg>
+<status status="PASS" endtime="20181225 16:51:12.945" starttime="20181225 16:51:12.945"></status>
+</kw>
+<status status="PASS" endtime="20181225 16:51:12.946" starttime="20181225 16:51:12.944"></status>
+</kw>
+<status status="PASS" endtime="20181225 16:51:12.946" starttime="20181225 16:51:08.385"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>**********Step 1**********</arg>
+</arguments>
+<status status="PASS" endtime="20181225 16:51:12.948" starttime="20181225 16:51:12.947"></status>
+</kw>
+<kw name="Get Matching Xpath Count" library="Selenium2Library">
+<doc>Returns number of elements matching `xpath`</doc>
+<arguments>
+<arg>${CountrySelectDropdown}</arg>
+</arguments>
+<assign>
+<var>${rowcount}</var>
+</assign>
+<msg timestamp="20181225 16:51:12.997" level="INFO">${rowcount} = 22</msg>
+<status status="PASS" endtime="20181225 16:51:12.997" starttime="20181225 16:51:12.949"></status>
+</kw>
+<kw type="for" name="${item} IN RANGE [ 1 | ${rowcount}+1 ]">
+<kw type="foritem" name="${item} = 1">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${CountrySelectDropdown}[${item}]</arg>
+</arguments>
+<msg timestamp="20181225 16:51:13.001" level="INFO">Clicking element '//div[@class='footer-country-selector row ']//select[@class='locales-dropdown']/option[1]'.</msg>
+<status status="PASS" endtime="20181225 16:51:18.190" starttime="20181225 16:51:13.000"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by `locator`.</doc>
+<arguments>
+<arg>${CountrySelectDropdown}[${item}]</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<msg timestamp="20181225 16:51:18.320" level="INFO">${result} = Italia</msg>
+<status status="PASS" endtime="20181225 16:51:18.320" starttime="20181225 16:51:18.190"></status>
+</kw>
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Return value of element attribute.</doc>
+<arguments>
+<arg>${CountrySelectDropdown}[${item}]@value</arg>
+</arguments>
+<assign>
+<var>${url}</var>
+</assign>
+<msg timestamp="20181225 16:51:18.360" level="INFO">${url} = http://magazine.trivago.it</msg>
+<status status="PASS" endtime="20181225 16:51:18.360" starttime="20181225 16:51:18.320"></status>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=</arg>
+<arg>${url}</arg>
+<arg>/</arg>
+</arguments>
+<assign>
+<var>${url}</var>
+</assign>
+<msg timestamp="20181225 16:51:18.361" level="INFO">${url} = http://magazine.trivago.it/</msg>
+<status status="PASS" endtime="20181225 16:51:18.361" starttime="20181225 16:51:18.360"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${CountrySelectDropdown}[${item}]</arg>
+</arguments>
+<msg timestamp="20181225 16:51:18.362" level="INFO">Clicking element '//div[@class='footer-country-selector row ']//select[@class='locales-dropdown']/option[1]'.</msg>
+<status status="PASS" endtime="20181225 16:51:18.538" starttime="20181225 16:51:18.361"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20181225 16:51:20.539" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20181225 16:51:20.540" starttime="20181225 16:51:18.538"></status>
+</kw>
+<kw name="Get Location" library="Selenium2Library">
+<doc>Returns the current location.</doc>
+<assign>
+<var>${url_current}</var>
+</assign>
+<msg timestamp="20181225 16:51:20.580" level="INFO">${url_current} = http://magazine.trivago.it/</msg>
+<status status="PASS" endtime="20181225 16:51:20.580" starttime="20181225 16:51:20.540"></status>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>${url_current}</arg>
+</arguments>
+<status status="PASS" endtime="20181225 16:51:20.581" starttime="20181225 16:51:20.580"></status>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Element Should Be Visible</arg>
+<arg>${MenuOpen}</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by `locator` is visible.</doc>
+<arguments>
+<arg>${MenuOpen}</arg>
+</arguments>
+<msg timestamp="20181225 16:51:20.582" level="INFO">Verifying element '//div[@class='nav-icon']' is visible.</msg>
+<status status="PASS" endtime="20181225 16:51:20.615" starttime="20181225 16:51:20.581"></status>
+</kw>
+<msg timestamp="20181225 16:51:20.615" level="INFO">${response} = True</msg>
+<status status="PASS" endtime="20181225 16:51:20.615" starttime="20181225 16:51:20.581"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>not ${response}</arg>
+<arg>Exit For Loop</arg>
+</arguments>
+<status status="PASS" endtime="20181225 16:51:20.616" starttime="20181225 16:51:20.616"></status>
+</kw>
+<status status="PASS" endtime="20181225 16:51:20.616" starttime="20181225 16:51:12.999"></status>
+</kw>
+<kw type="foritem" name="${item} = 2">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${CountrySelectDropdown}[${item}]</arg>
+</arguments>
+<msg timestamp="20181225 16:51:20.616" level="INFO">Clicking element '//div[@class='footer-country-selector row ']//select[@class='locales-dropdown']/option[2]'.</msg>
+<status status="PASS" endtime="20181225 16:51:24.554" starttime="20181225 16:51:20.616"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by `locator`.</doc>
+<arguments>
+<arg>${CountrySelectDropdown}[${item}]</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<msg timestamp="20181225 16:51:24.678" level="INFO">${result} = España</msg>
+<status status="PASS" endtime="20181225 16:51:24.679" starttime="20181225 16:51:24.555"></status>
+</kw>
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Return value of element attribute.</doc>
+<arguments>
+<arg>${CountrySelectDropdown}[${item}]@value</arg>
+</arguments>
+<assign>
+<var>${url}</var>
+</assign>
+<msg timestamp="20181225 16:51:24.783" level="INFO">${url} = http://magazine.trivago.es</msg>
+<status status="PASS" endtime="20181225 16:51:24.784" starttime="20181225 16:51:24.679"></status>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=</arg>
+<arg>${url}</arg>
+<arg>/</arg>
+</arguments>
+<assign>
+<var>${url}</var>
+</assign>
+<msg timestamp="20181225 16:51:24.785" level="INFO">${url} = http://magazine.trivago.es/</msg>
+<status status="PASS" endtime="20181225 16:51:24.785" starttime="20181225 16:51:24.784"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${CountrySelectDropdown}[${item}]</arg>
+</arguments>
+<msg timestamp="20181225 16:51:24.786" level="INFO">Clicking element '//div[@class='footer-country-selector row ']//select[@class='locales-dropdown']/option[2]'.</msg>
+<status status="PASS" endtime="20181225 16:51:25.055" starttime="20181225 16:51:24.785"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20181225 16:51:27.056" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20181225 16:51:27.056" starttime="20181225 16:51:25.056"></status>
+</kw>
+<kw name="Get Location" library="Selenium2Library">
+<doc>Returns the current location.</doc>
+<assign>
+<var>${url_current}</var>
+</assign>
+<msg timestamp="20181225 16:51:27.063" level="INFO">${url_current} = http://magazine.trivago.es/</msg>
+<status status="PASS" endtime="20181225 16:51:27.064" starttime="20181225 16:51:27.056"></status>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>${url_current}</arg>
+</arguments>
+<status status="PASS" endtime="20181225 16:51:27.064" starttime="20181225 16:51:27.064"></status>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Element Should Be Visible</arg>
+<arg>${MenuOpen}</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by `locator` is visible.</doc>
+<arguments>
+<arg>${MenuOpen}</arg>
+</arguments>
+<msg timestamp="20181225 16:51:27.065" level="INFO">Verifying element '//div[@class='nav-icon']' is visible.</msg>
+<status status="PASS" endtime="20181225 16:51:27.106" starttime="20181225 16:51:27.065"></status>
+</kw>
+<msg timestamp="20181225 16:51:27.106" level="INFO">${response} = True</msg>
+<status status="PASS" endtime="20181225 16:51:27.106" starttime="20181225 16:51:27.064"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>not ${response}</arg>
+<arg>Exit For Loop</arg>
+</arguments>
+<status status="PASS" endtime="20181225 16:51:27.106" starttime="20181225 16:51:27.106"></status>
+</kw>
+<status status="PASS" endtime="20181225 16:51:27.106" starttime="20181225 16:51:20.616"></status>
+</kw>
+<kw type="foritem" name="${item} = 3">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${CountrySelectDropdown}[${item}]</arg>
+</arguments>
+<msg timestamp="20181225 16:51:27.107" level="INFO">Clicking element '//div[@class='footer-country-selector row ']//select[@class='locales-dropdown']/option[3]'.</msg>
+<status status="PASS" endtime="20181225 16:51:29.775" starttime="20181225 16:51:27.107"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by `locator`.</doc>
+<arguments>
+<arg>${CountrySelectDropdown}[${item}]</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<msg timestamp="20181225 16:51:29.879" level="INFO">${result} = Deutschland</msg>
+<status status="PASS" endtime="20181225 16:51:29.879" starttime="20181225 16:51:29.775"></status>
+</kw>
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Return value of element attribute.</doc>
+<arguments>
+<arg>${CountrySelectDropdown}[${item}]@value</arg>
+</arguments>
+<assign>
+<var>${url}</var>
+</assign>
+<msg timestamp="20181225 16:51:29.904" level="INFO">${url} = http://magazine.trivago.de</msg>
+<status status="PASS" endtime="20181225 16:51:29.904" starttime="20181225 16:51:29.879"></status>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=</arg>
+<arg>${url}</arg>
+<arg>/</arg>
+</arguments>
+<assign>
+<var>${url}</var>
+</assign>
+<msg timestamp="20181225 16:51:29.905" level="INFO">${url} = http://magazine.trivago.de/</msg>
+<status status="PASS" endtime="20181225 16:51:29.905" starttime="20181225 16:51:29.904"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${CountrySelectDropdown}[${item}]</arg>
+</arguments>
+<msg timestamp="20181225 16:51:29.906" level="INFO">Clicking element '//div[@class='footer-country-selector row ']//select[@class='locales-dropdown']/option[3]'.</msg>
+<status status="PASS" endtime="20181225 16:51:30.021" starttime="20181225 16:51:29.906"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20181225 16:51:32.022" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20181225 16:51:32.022" starttime="20181225 16:51:30.022"></status>
+</kw>
+<kw name="Get Location" library="Selenium2Library">
+<doc>Returns the current location.</doc>
+<assign>
+<var>${url_current}</var>
+</assign>
+<msg timestamp="20181225 16:51:32.040" level="INFO">${url_current} = http://magazine.trivago.de/</msg>
+<status status="PASS" endtime="20181225 16:51:32.040" starttime="20181225 16:51:32.023"></status>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>${url_current}</arg>
+</arguments>
+<status status="PASS" endtime="20181225 16:51:32.041" starttime="20181225 16:51:32.040"></status>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Element Should Be Visible</arg>
+<arg>${MenuOpen}</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by `locator` is visible.</doc>
+<arguments>
+<arg>${MenuOpen}</arg>
+</arguments>
+<msg timestamp="20181225 16:51:32.043" level="INFO">Verifying element '//div[@class='nav-icon']' is visible.</msg>
+<status status="PASS" endtime="20181225 16:51:32.166" starttime="20181225 16:51:32.043"></status>
+</kw>
+<msg timestamp="20181225 16:51:32.166" level="INFO">${response} = True</msg>
+<status status="PASS" endtime="20181225 16:51:32.166" starttime="20181225 16:51:32.042"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>not ${response}</arg>
+<arg>Exit For Loop</arg>
+</arguments>
+<status status="PASS" endtime="20181225 16:51:32.167" starttime="20181225 16:51:32.167"></status>
+</kw>
+<status status="PASS" endtime="20181225 16:51:32.167" starttime="20181225 16:51:27.107"></status>
+</kw>
+<kw type="foritem" name="${item} = 4">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${CountrySelectDropdown}[${item}]</arg>
+</arguments>
+<msg timestamp="20181225 16:51:32.169" level="INFO">Clicking element '//div[@class='footer-country-selector row ']//select[@class='locales-dropdown']/option[4]'.</msg>
+<status status="PASS" endtime="20181225 16:51:35.256" starttime="20181225 16:51:32.168"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by `locator`.</doc>
+<arguments>
+<arg>${CountrySelectDropdown}[${item}]</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<msg timestamp="20181225 16:51:35.404" level="INFO">${result} = France</msg>
+<status status="PASS" endtime="20181225 16:51:35.404" starttime="20181225 16:51:35.256"></status>
+</kw>
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Return value of element attribute.</doc>
+<arguments>
+<arg>${CountrySelectDropdown}[${item}]@value</arg>
+</arguments>
+<assign>
+<var>${url}</var>
+</assign>
+<msg timestamp="20181225 16:51:35.442" level="INFO">${url} = http://magazine.trivago.fr</msg>
+<status status="PASS" endtime="20181225 16:51:35.442" starttime="20181225 16:51:35.404"></status>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=</arg>
+<arg>${url}</arg>
+<arg>/</arg>
+</arguments>
+<assign>
+<var>${url}</var>
+</assign>
+<msg timestamp="20181225 16:51:35.445" level="INFO">${url} = http://magazine.trivago.fr/</msg>
+<status status="PASS" endtime="20181225 16:51:35.445" starttime="20181225 16:51:35.443"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${CountrySelectDropdown}[${item}]</arg>
+</arguments>
+<msg timestamp="20181225 16:51:35.446" level="INFO">Clicking element '//div[@class='footer-country-selector row ']//select[@class='locales-dropdown']/option[4]'.</msg>
+<status status="PASS" endtime="20181225 16:51:35.626" starttime="20181225 16:51:35.445"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20181225 16:51:37.627" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20181225 16:51:37.627" starttime="20181225 16:51:35.626"></status>
+</kw>
+<kw name="Get Location" library="Selenium2Library">
+<doc>Returns the current location.</doc>
+<assign>
+<var>${url_current}</var>
+</assign>
+<msg timestamp="20181225 16:51:37.643" level="INFO">${url_current} = http://magazine.trivago.fr/</msg>
+<status status="PASS" endtime="20181225 16:51:37.644" starttime="20181225 16:51:37.628"></status>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>${url_current}</arg>
+</arguments>
+<status status="PASS" endtime="20181225 16:51:37.645" starttime="20181225 16:51:37.644"></status>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Element Should Be Visible</arg>
+<arg>${MenuOpen}</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by `locator` is visible.</doc>
+<arguments>
+<arg>${MenuOpen}</arg>
+</arguments>
+<msg timestamp="20181225 16:51:37.647" level="INFO">Verifying element '//div[@class='nav-icon']' is visible.</msg>
+<status status="PASS" endtime="20181225 16:51:37.747" starttime="20181225 16:51:37.646"></status>
+</kw>
+<msg timestamp="20181225 16:51:37.748" level="INFO">${response} = True</msg>
+<status status="PASS" endtime="20181225 16:51:37.748" starttime="20181225 16:51:37.645"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>not ${response}</arg>
+<arg>Exit For Loop</arg>
+</arguments>
+<status status="PASS" endtime="20181225 16:51:37.749" starttime="20181225 16:51:37.748"></status>
+</kw>
+<status status="PASS" endtime="20181225 16:51:37.749" starttime="20181225 16:51:32.168"></status>
+</kw>
+<kw type="foritem" name="${item} = 5">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${CountrySelectDropdown}[${item}]</arg>
+</arguments>
+<msg timestamp="20181225 16:51:37.750" level="INFO">Clicking element '//div[@class='footer-country-selector row ']//select[@class='locales-dropdown']/option[5]'.</msg>
+<status status="PASS" endtime="20181225 16:51:40.404" starttime="20181225 16:51:37.750"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by `locator`.</doc>
+<arguments>
+<arg>${CountrySelectDropdown}[${item}]</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<msg timestamp="20181225 16:51:40.571" level="INFO">${result} = USA</msg>
+<status status="PASS" endtime="20181225 16:51:40.571" starttime="20181225 16:51:40.405"></status>
+</kw>
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Return value of element attribute.</doc>
+<arguments>
+<arg>${CountrySelectDropdown}[${item}]@value</arg>
+</arguments>
+<assign>
+<var>${url}</var>
+</assign>
+<msg timestamp="20181225 16:51:40.624" level="INFO">${url} = http://magazine.trivago.com</msg>
+<status status="PASS" endtime="20181225 16:51:40.624" starttime="20181225 16:51:40.573"></status>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=</arg>
+<arg>${url}</arg>
+<arg>/</arg>
+</arguments>
+<assign>
+<var>${url}</var>
+</assign>
+<msg timestamp="20181225 16:51:40.626" level="INFO">${url} = http://magazine.trivago.com/</msg>
+<status status="PASS" endtime="20181225 16:51:40.626" starttime="20181225 16:51:40.625"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${CountrySelectDropdown}[${item}]</arg>
+</arguments>
+<msg timestamp="20181225 16:51:40.626" level="INFO">Clicking element '//div[@class='footer-country-selector row ']//select[@class='locales-dropdown']/option[5]'.</msg>
+<status status="PASS" endtime="20181225 16:51:40.841" starttime="20181225 16:51:40.626"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20181225 16:51:42.842" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20181225 16:51:42.842" starttime="20181225 16:51:40.841"></status>
+</kw>
+<kw name="Get Location" library="Selenium2Library">
+<doc>Returns the current location.</doc>
+<assign>
+<var>${url_current}</var>
+</assign>
+<msg timestamp="20181225 16:51:42.857" level="INFO">${url_current} = http://magazine.trivago.com/</msg>
+<status status="PASS" endtime="20181225 16:51:42.857" starttime="20181225 16:51:42.843"></status>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>${url_current}</arg>
+</arguments>
+<status status="PASS" endtime="20181225 16:51:42.859" starttime="20181225 16:51:42.858"></status>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Element Should Be Visible</arg>
+<arg>${MenuOpen}</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by `locator` is visible.</doc>
+<arguments>
+<arg>${MenuOpen}</arg>
+</arguments>
+<msg timestamp="20181225 16:51:42.861" level="INFO">Verifying element '//div[@class='nav-icon']' is visible.</msg>
+<status status="PASS" endtime="20181225 16:51:42.960" starttime="20181225 16:51:42.860"></status>
+</kw>
+<msg timestamp="20181225 16:51:42.961" level="INFO">${response} = True</msg>
+<status status="PASS" endtime="20181225 16:51:42.961" starttime="20181225 16:51:42.859"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>not ${response}</arg>
+<arg>Exit For Loop</arg>
+</arguments>
+<status status="PASS" endtime="20181225 16:51:42.962" starttime="20181225 16:51:42.961"></status>
+</kw>
+<status status="PASS" endtime="20181225 16:51:42.963" starttime="20181225 16:51:37.749"></status>
+</kw>
+<kw type="foritem" name="${item} = 6">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${CountrySelectDropdown}[${item}]</arg>
+</arguments>
+<msg timestamp="20181225 16:51:42.964" level="INFO">Clicking element '//div[@class='footer-country-selector row ']//select[@class='locales-dropdown']/option[6]'.</msg>
+<status status="PASS" endtime="20181225 16:51:46.328" starttime="20181225 16:51:42.963"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by `locator`.</doc>
+<arguments>
+<arg>${CountrySelectDropdown}[${item}]</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<msg timestamp="20181225 16:51:46.650" level="INFO">${result} = Canada</msg>
+<status status="PASS" endtime="20181225 16:51:46.651" starttime="20181225 16:51:46.328"></status>
+</kw>
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Return value of element attribute.</doc>
+<arguments>
+<arg>${CountrySelectDropdown}[${item}]@value</arg>
+</arguments>
+<assign>
+<var>${url}</var>
+</assign>
+<msg timestamp="20181225 16:51:46.700" level="INFO">${url} = http://magazine.trivago.ca</msg>
+<status status="PASS" endtime="20181225 16:51:46.700" starttime="20181225 16:51:46.651"></status>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=</arg>
+<arg>${url}</arg>
+<arg>/</arg>
+</arguments>
+<assign>
+<var>${url}</var>
+</assign>
+<msg timestamp="20181225 16:51:46.702" level="INFO">${url} = http://magazine.trivago.ca/</msg>
+<status status="PASS" endtime="20181225 16:51:46.702" starttime="20181225 16:51:46.701"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${CountrySelectDropdown}[${item}]</arg>
+</arguments>
+<msg timestamp="20181225 16:51:46.704" level="INFO">Clicking element '//div[@class='footer-country-selector row ']//select[@class='locales-dropdown']/option[6]'.</msg>
+<status status="PASS" endtime="20181225 16:51:46.848" starttime="20181225 16:51:46.703"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20181225 16:51:48.849" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20181225 16:51:48.849" starttime="20181225 16:51:46.848"></status>
+</kw>
+<kw name="Get Location" library="Selenium2Library">
+<doc>Returns the current location.</doc>
+<assign>
+<var>${url_current}</var>
+</assign>
+<msg timestamp="20181225 16:51:48.864" level="INFO">${url_current} = http://magazine.trivago.ca/</msg>
+<status status="PASS" endtime="20181225 16:51:48.865" starttime="20181225 16:51:48.850"></status>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>${url_current}</arg>
+</arguments>
+<status status="PASS" endtime="20181225 16:51:48.866" starttime="20181225 16:51:48.865"></status>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Element Should Be Visible</arg>
+<arg>${MenuOpen}</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by `locator` is visible.</doc>
+<arguments>
+<arg>${MenuOpen}</arg>
+</arguments>
+<msg timestamp="20181225 16:51:48.868" level="INFO">Verifying element '//div[@class='nav-icon']' is visible.</msg>
+<status status="PASS" endtime="20181225 16:51:48.989" starttime="20181225 16:51:48.868"></status>
+</kw>
+<msg timestamp="20181225 16:51:48.990" level="INFO">${response} = True</msg>
+<status status="PASS" endtime="20181225 16:51:48.990" starttime="20181225 16:51:48.867"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>not ${response}</arg>
+<arg>Exit For Loop</arg>
+</arguments>
+<status status="PASS" endtime="20181225 16:51:48.991" starttime="20181225 16:51:48.990"></status>
+</kw>
+<status status="PASS" endtime="20181225 16:51:48.992" starttime="20181225 16:51:42.963"></status>
+</kw>
+<kw type="foritem" name="${item} = 7">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${CountrySelectDropdown}[${item}]</arg>
+</arguments>
+<msg timestamp="20181225 16:51:48.993" level="INFO">Clicking element '//div[@class='footer-country-selector row ']//select[@class='locales-dropdown']/option[7]'.</msg>
+<status status="PASS" endtime="20181225 16:51:52.339" starttime="20181225 16:51:48.992"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by `locator`.</doc>
+<arguments>
+<arg>${CountrySelectDropdown}[${item}]</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<msg timestamp="20181225 16:51:52.490" level="INFO">${result} = 香港</msg>
+<status status="PASS" endtime="20181225 16:51:52.491" starttime="20181225 16:51:52.339"></status>
+</kw>
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Return value of element attribute.</doc>
+<arguments>
+<arg>${CountrySelectDropdown}[${item}]@value</arg>
+</arguments>
+<assign>
+<var>${url}</var>
+</assign>
+<msg timestamp="20181225 16:51:52.556" level="INFO">${url} = http://magazine.trivago.hk</msg>
+<status status="PASS" endtime="20181225 16:51:52.556" starttime="20181225 16:51:52.491"></status>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=</arg>
+<arg>${url}</arg>
+<arg>/</arg>
+</arguments>
+<assign>
+<var>${url}</var>
+</assign>
+<msg timestamp="20181225 16:51:52.558" level="INFO">${url} = http://magazine.trivago.hk/</msg>
+<status status="PASS" endtime="20181225 16:51:52.558" starttime="20181225 16:51:52.557"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${CountrySelectDropdown}[${item}]</arg>
+</arguments>
+<msg timestamp="20181225 16:51:52.559" level="INFO">Clicking element '//div[@class='footer-country-selector row ']//select[@class='locales-dropdown']/option[7]'.</msg>
+<status status="PASS" endtime="20181225 16:51:52.698" starttime="20181225 16:51:52.558"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20181225 16:51:54.699" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20181225 16:51:54.699" starttime="20181225 16:51:52.699"></status>
+</kw>
+<kw name="Get Location" library="Selenium2Library">
+<doc>Returns the current location.</doc>
+<assign>
+<var>${url_current}</var>
+</assign>
+<msg timestamp="20181225 16:51:54.709" level="INFO">${url_current} = http://magazine.trivago.hk/</msg>
+<status status="PASS" endtime="20181225 16:51:54.709" starttime="20181225 16:51:54.699"></status>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>${url_current}</arg>
+</arguments>
+<status status="PASS" endtime="20181225 16:51:54.710" starttime="20181225 16:51:54.710"></status>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Element Should Be Visible</arg>
+<arg>${MenuOpen}</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by `locator` is visible.</doc>
+<arguments>
+<arg>${MenuOpen}</arg>
+</arguments>
+<msg timestamp="20181225 16:51:54.711" level="INFO">Verifying element '//div[@class='nav-icon']' is visible.</msg>
+<status status="PASS" endtime="20181225 16:51:54.756" starttime="20181225 16:51:54.711"></status>
+</kw>
+<msg timestamp="20181225 16:51:54.757" level="INFO">${response} = True</msg>
+<status status="PASS" endtime="20181225 16:51:54.757" starttime="20181225 16:51:54.710"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>not ${response}</arg>
+<arg>Exit For Loop</arg>
+</arguments>
+<status status="PASS" endtime="20181225 16:51:54.757" starttime="20181225 16:51:54.757"></status>
+</kw>
+<status status="PASS" endtime="20181225 16:51:54.757" starttime="20181225 16:51:48.992"></status>
+</kw>
+<kw type="foritem" name="${item} = 8">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${CountrySelectDropdown}[${item}]</arg>
+</arguments>
+<msg timestamp="20181225 16:51:54.758" level="INFO">Clicking element '//div[@class='footer-country-selector row ']//select[@class='locales-dropdown']/option[8]'.</msg>
+<status status="PASS" endtime="20181225 16:51:57.356" starttime="20181225 16:51:54.758"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by `locator`.</doc>
+<arguments>
+<arg>${CountrySelectDropdown}[${item}]</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<msg timestamp="20181225 16:51:57.476" level="INFO">${result} = Australia</msg>
+<status status="PASS" endtime="20181225 16:51:57.476" starttime="20181225 16:51:57.357"></status>
+</kw>
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Return value of element attribute.</doc>
+<arguments>
+<arg>${CountrySelectDropdown}[${item}]@value</arg>
+</arguments>
+<assign>
+<var>${url}</var>
+</assign>
+<msg timestamp="20181225 16:51:57.518" level="INFO">${url} = http://magazine.trivago.com.au</msg>
+<status status="PASS" endtime="20181225 16:51:57.518" starttime="20181225 16:51:57.477"></status>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=</arg>
+<arg>${url}</arg>
+<arg>/</arg>
+</arguments>
+<assign>
+<var>${url}</var>
+</assign>
+<msg timestamp="20181225 16:51:57.519" level="INFO">${url} = http://magazine.trivago.com.au/</msg>
+<status status="PASS" endtime="20181225 16:51:57.519" starttime="20181225 16:51:57.519"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${CountrySelectDropdown}[${item}]</arg>
+</arguments>
+<msg timestamp="20181225 16:51:57.521" level="INFO">Clicking element '//div[@class='footer-country-selector row ']//select[@class='locales-dropdown']/option[8]'.</msg>
+<status status="PASS" endtime="20181225 16:51:57.607" starttime="20181225 16:51:57.520"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20181225 16:51:59.608" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20181225 16:51:59.608" starttime="20181225 16:51:57.607"></status>
+</kw>
+<kw name="Get Location" library="Selenium2Library">
+<doc>Returns the current location.</doc>
+<assign>
+<var>${url_current}</var>
+</assign>
+<msg timestamp="20181225 16:51:59.622" level="INFO">${url_current} = http://magazine.trivago.com.au/</msg>
+<status status="PASS" endtime="20181225 16:51:59.622" starttime="20181225 16:51:59.609"></status>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>${url_current}</arg>
+</arguments>
+<status status="PASS" endtime="20181225 16:51:59.624" starttime="20181225 16:51:59.623"></status>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Element Should Be Visible</arg>
+<arg>${MenuOpen}</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by `locator` is visible.</doc>
+<arguments>
+<arg>${MenuOpen}</arg>
+</arguments>
+<msg timestamp="20181225 16:51:59.625" level="INFO">Verifying element '//div[@class='nav-icon']' is visible.</msg>
+<status status="PASS" endtime="20181225 16:51:59.706" starttime="20181225 16:51:59.625"></status>
+</kw>
+<msg timestamp="20181225 16:51:59.707" level="INFO">${response} = True</msg>
+<status status="PASS" endtime="20181225 16:51:59.707" starttime="20181225 16:51:59.624"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>not ${response}</arg>
+<arg>Exit For Loop</arg>
+</arguments>
+<status status="PASS" endtime="20181225 16:51:59.708" starttime="20181225 16:51:59.707"></status>
+</kw>
+<status status="PASS" endtime="20181225 16:51:59.709" starttime="20181225 16:51:54.758"></status>
+</kw>
+<kw type="foritem" name="${item} = 9">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${CountrySelectDropdown}[${item}]</arg>
+</arguments>
+<msg timestamp="20181225 16:51:59.710" level="INFO">Clicking element '//div[@class='footer-country-selector row ']//select[@class='locales-dropdown']/option[9]'.</msg>
+<status status="PASS" endtime="20181225 16:52:02.635" starttime="20181225 16:51:59.709"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by `locator`.</doc>
+<arguments>
+<arg>${CountrySelectDropdown}[${item}]</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20181225 16:52:06.195" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20181225 16:52:06.196" starttime="20181225 16:52:05.722"></status>
+</kw>
+<msg timestamp="20181225 16:52:06.199" level="FAIL">ValueError: Element locator '//div[@class='footer-country-selector row ']//select[@class='locales-dropdown']/option[9]' did not match any elements.</msg>
+<status status="FAIL" endtime="20181225 16:52:06.200" starttime="20181225 16:52:02.636"></status>
+</kw>
+<status status="FAIL" endtime="20181225 16:52:06.200" starttime="20181225 16:51:59.709"></status>
+</kw>
+<status status="FAIL" endtime="20181225 16:52:06.201" starttime="20181225 16:51:12.998"></status>
+</kw>
+<status status="FAIL" endtime="20181225 16:52:06.202" critical="yes" starttime="20181225 16:51:08.385">ValueError: Element locator '//div[@class='footer-country-selector row ']//select[@class='locales-dropdown']/option[9]' did not match any elements.</status>
+</test>
+<kw type="teardown" name="afterSuite" library="CommonFunctions">
+<kw name="Close All Browsers" library="Selenium2Library">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" endtime="20181225 16:52:07.106" starttime="20181225 16:52:06.210"></status>
+</kw>
+<status status="PASS" endtime="20181225 16:52:07.107" starttime="20181225 16:52:06.209"></status>
+</kw>
+<status status="FAIL" endtime="20181225 16:52:07.107" starttime="20181225 16:50:29.825"></status>
+</suite>
+<status status="FAIL" endtime="20181225 16:52:07.122" starttime="20181225 16:49:28.784"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="1" pass="5">Critical Tests</stat>
+<stat fail="1" pass="5">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="1" id="s1" name="01-Suite SDET Task1 &amp; 02-Suite SDET Task1" pass="5">01-Suite SDET Task1 &amp; 02-Suite SDET Task1</stat>
+<stat fail="0" id="s1-s1" name="01-Suite SDET Task1" pass="4">01-Suite SDET Task1 &amp; 02-Suite SDET Task1.01-Suite SDET Task1</stat>
+<stat fail="1" id="s1-s2" name="02-Suite SDET Task1" pass="1">01-Suite SDET Task1 &amp; 02-Suite SDET Task1.02-Suite SDET Task1</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

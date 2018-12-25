@@ -1,0 +1,7 @@
+BROWSER = "chrome"
+URL = "http://magazine.trivago.com/"
+PAGE_TITLE = "trivago Magazine"
+EMAIL_SUBSCRIBE_MESSAGE = "You are now checked-in!"
+CONTACT_PAGE_URL = "http://magazine.trivago.com/contact/"
+NORTHEAST_URL = "http://magazine.trivago.com/destination/usa/northeast/"
+MESSAGE_SENT_SUCCESSFULLY = "Message Sent Successfully!"
