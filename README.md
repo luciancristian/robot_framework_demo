@@ -29,9 +29,12 @@ or if you are in TestSuites folder:
 
 robot -d ../Results 01-Suite_SDET_Task1.robot 02-Suite_SDET_Task1.robot
 
+Using a linux machine the command to start suites in a headless environment would be(x virtual display server)(should be entered in TestSuites folder):
+xvfb-run -n 2 '--server-args=-screen 0, 1920x1080x24' robot -d ../Results --include All ''
+
 If emails are not updated every run some tests will fail as the application does not return succed after subscription with an already used email.
 
-Also TestCase 02_Select_language from 02-Suite_SDET_Task1.robot fails as I think it is a bug for Suomi as it is the only one with https link : https://magazine.trivago.fi goes to browser as https//magazine.trivago.fi and is not loaded ... it should be made as http??
+Also TestCase 02_Select_language from 02-Suite_SDET_Task1.robot FAILS as I think it is a DEFECT for SUOMI language as it is the only one with https link : https://magazine.trivago.fi goes to browser as https//magazine.trivago.fi and is not loaded ... it should be made as http as other languages?
 
 
 
