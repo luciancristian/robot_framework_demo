@@ -55,4 +55,6 @@ I've chosen this 2 test cases as they are important to make visitors wanna spend
 2.being cultural closer to the visitor (language, location, events)
 
 
+PS. Chosing Keyword driven testing framework is a very quick option for making a test setup (and besides that everyone in the team-PO, PM, manual QA, automationQA, app designers can participate).
+
 
